@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Zomato</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Zomato Retaurant Rate Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="online_order" size= "50" placeholder="online_order" required="required" /><br>
+		<input type="text" name="book_table" size= "50" placeholder="book_table" required="required" /><br>
+		<input type="text" name="votes" size= "50" placeholder="votes" required="required" /><br>
+		<input type="text" name="avg_cost" size= "50" placeholder="avg_cost" required="required" /><br>
+		<input type="text" name="Count_cuisines" size= "50" placeholder="Count_cuisines" required="required" /><br>
+		<input type="text" name="Count_dishes" size= "50" placeholder="Count_dishes" required="required" /><br>
+		
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+
+
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
